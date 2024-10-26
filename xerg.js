@@ -39,7 +39,7 @@ async function xergrush() {
     const loadingBar = document.createElement("div");
     loadingBar.style.height = "3rem";
     loadingBar.style.backgroundImage =
-      "linear-gradient(to right, #eff6ff 30%, #2563eb60 60%, #eff6ff)";
+      "linear-gradient(to right, #fffbef 30%, #f2d068 60%, #fffbef)";
     loadingBar.style.width = "calc(100% - 16px)";
     loadingBar.style.marginBottom = "1rem";
     loadingBar.animate(
