@@ -31,7 +31,6 @@ async function xergrush() {
     length: "short",
   });
 
-  // TODO add chunking
   for (var i = 0; i < paragraphTextArray.length; i += 4) {
     const line = document.createElement("p");
     var text = paragraphTextArray[i];
@@ -39,11 +38,12 @@ async function xergrush() {
       text += paragraphTextArray[i + 1];
     }
     if (i + 2 < paragraphTextArray.length) {
-      text += paragraphTextArray[i + 1];
+      text += paragraphTextArray[i + 2];
     }
     if (i + 3 < paragraphTextArray.length) {
-      text += paragraphTextArray[i + 1];
+      text += paragraphTextArray[i + 3];
     }
+    console.log("Text being summarized: " + text);
     try {
       line.textContent = await summarizer.summarize(text);
       line.style.fontSize = "x-large";
