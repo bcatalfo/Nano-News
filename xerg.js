@@ -34,10 +34,14 @@ async function xergrush() {
   for (var i = 0; i < paragraphTextArray.length; i++) {
     const line = document.createElement("p");
     var text = paragraphTextArray[i];
-    line.textContent = await summarizer.summarize(paragraphTextArray[i]);
-    line.style.fontSize = "x-large";
-    console.log(line.textContent);
-    div.appendChild(line);
+    try {
+      line.textContent = await summarizer.summarize(paragraphTextArray[i]);
+      line.style.fontSize = "x-large";
+      console.log(line.textContent);
+      div.appendChild(line);
+    } catch (e) {
+      console.log(e);
+    }
   }
 }
 
