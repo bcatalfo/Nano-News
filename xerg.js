@@ -38,7 +38,7 @@ async function xergrush() {
     loadingBar.style.height = "3rem";
     loadingBar.style.backgroundImage =
       "linear-gradient(to right, #eff6ff 30%, #2563eb60 60%, #eff6ff)";
-    loadingBar.style.width = "55%";
+    loadingBar.style.width = "calc(100% - 16px)";
     div.appendChild(loadingBar);
 
     const line = document.createElement("p");
