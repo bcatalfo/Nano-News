@@ -69,6 +69,7 @@ async function xergrush() {
       console.log(e);
     }
   }
+  heading.textContent = "Summary";
 }
 
 xergrush();
