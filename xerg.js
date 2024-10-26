@@ -13,8 +13,22 @@ const paragraphTextArray = Object.values(paragraphs).map(
 );
 console.log(paragraphTextArray);
 
-for (var i = 0; i < paragraphTextArray.length; i++) {
-  const line = document.createElement("p");
-  line.textContent = paragraphTextArray[i];
-  heading.appendChild(line);
+// Time to do AI
+async function xergrush() {
+  summarizer = await ai.summarizer.create({
+    sharedContext: "An article from the New York Times",
+    type: "tl;dr",
+    length: "short",
+  });
+
+  // TODO add chunking
+  for (var i = 0; i < paragraphTextArray.length; i++) {
+    const line = document.createElement("p");
+    var text = paragraphTextArray[i];
+    line.textContent = await summarizer.summarize(paragraphTextArray[i]);
+    console.log(line.textContent);
+    heading.appendChild(line);
+  }
 }
+
+xergrush();
