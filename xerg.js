@@ -3,6 +3,7 @@ const article = document.getElementsByName("articleBody")[0];
 console.log("article is " + article);
 const heading = document.createElement("h1");
 heading.textContent = "Generating summary...";
+heading.style.fontSize = "xx-large";
 article.prepend(heading);
 
 var paragraphs = article.getElementsByTagName("p");
@@ -26,6 +27,7 @@ async function xergrush() {
     const line = document.createElement("p");
     var text = paragraphTextArray[i];
     line.textContent = await summarizer.summarize(paragraphTextArray[i]);
+    line.style.fontSize = "x-large";
     console.log(line.textContent);
     heading.appendChild(line);
   }
