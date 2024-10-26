@@ -46,6 +46,7 @@ async function xergrush() {
     try {
       line.textContent = await summarizer.summarize(text);
       line.style.fontSize = "x-large";
+      line.style.marginBottom = "0.9375rem";
       console.log(line.textContent);
       div.appendChild(line);
     } catch (e) {
