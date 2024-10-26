@@ -33,6 +33,14 @@ async function xergrush() {
   });
 
   for (var i = 0; i < paragraphTextArray.length; i += 8) {
+    // Let's do a loading animation
+    const loadingBar = document.createElement("div");
+    loadingBar.style.height = "3rem";
+    loadingBar.style.backgroundImage =
+      "linear-gradient(to right, #eff6ff 30%, #2563eb60 60%, #eff6ff)";
+    loadingBar.style.width = "55%";
+    div.appendChild(loadingBar);
+
     const line = document.createElement("p");
     var text = paragraphTextArray[i];
     for (var j = 0; j < 8; j++) {
@@ -47,7 +55,7 @@ async function xergrush() {
       line.style.marginBottom = "0.9375rem";
       line.style.marginLeft = "8px";
       console.log(line.textContent);
-      div.appendChild(line);
+      div.replaceChild(line, loadingBar);
     } catch (e) {
       console.log(e);
     }
