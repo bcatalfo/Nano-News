@@ -1,10 +1,15 @@
 console.log("THis is xerg speaking");
 const article = document.getElementsByName("articleBody")[0];
 console.log("article is " + article);
+const div = document.createElement("div");
+div.style.alignItems = "center";
+div.style.display = "flex";
+div.style.flexDirection = "column";
 const heading = document.createElement("h1");
 heading.textContent = "Generating summary...";
 heading.style.fontSize = "xx-large";
-article.prepend(heading);
+div.prepend(heading);
+article.prepend(div);
 
 var paragraphs = article.getElementsByTagName("p");
 console.log("Length of paragraphs: " + paragraphs.length);
@@ -29,7 +34,7 @@ async function xergrush() {
     line.textContent = await summarizer.summarize(paragraphTextArray[i]);
     line.style.fontSize = "x-large";
     console.log(line.textContent);
-    heading.appendChild(line);
+    div.appendChild(line);
   }
 }
 
