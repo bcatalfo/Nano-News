@@ -12,6 +12,8 @@ div.style.border = "solid 3px";
 const heading = document.createElement("h1");
 heading.textContent = "Generating summary...";
 heading.style.fontSize = "xx-large";
+heading.style.marginBottom = "1rem";
+heading.style.marginTop = ".85rem";
 div.prepend(heading);
 article.prepend(div);
 
