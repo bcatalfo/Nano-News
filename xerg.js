@@ -5,9 +5,16 @@ const heading = document.createElement("h1");
 heading.textContent = "Generating summary...";
 article.prepend(heading);
 
-for (var i = 0; i < 5; i++) {
+var paragraphs = article.getElementsByTagName("p");
+console.log("Length of paragraphs: " + paragraphs.length);
+console.log("With type" + typeof paragraphs);
+const paragraphTextArray = Object.values(paragraphs).map(
+  (paragraph) => paragraph.innerText
+);
+console.log(paragraphTextArray);
+
+for (var i = 0; i < paragraphTextArray.length; i++) {
   const line = document.createElement("p");
-  line.textContent =
-    "Generating a bullet point from a chunk of paragraphs number" + i;
+  line.textContent = paragraphTextArray[i];
   heading.appendChild(line);
 }
