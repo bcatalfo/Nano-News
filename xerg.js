@@ -16,6 +16,7 @@ div.prepend(heading);
 article.prepend(div);
 
 var paragraphs = article.getElementsByTagName("p");
+// TODO: Get rid of "p" elements that arent actually paragraphs from the article
 console.log("Length of paragraphs: " + paragraphs.length);
 console.log("With type" + typeof paragraphs);
 const paragraphTextArray = Object.values(paragraphs).map(
