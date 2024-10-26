@@ -31,11 +31,20 @@ async function xergrush() {
   });
 
   // TODO add chunking
-  for (var i = 0; i < paragraphTextArray.length; i++) {
+  for (var i = 0; i < paragraphTextArray.length; i += 4) {
     const line = document.createElement("p");
     var text = paragraphTextArray[i];
+    if (i + 1 < paragraphTextArray.length) {
+      text += paragraphTextArray[i + 1];
+    }
+    if (i + 2 < paragraphTextArray.length) {
+      text += paragraphTextArray[i + 1];
+    }
+    if (i + 3 < paragraphTextArray.length) {
+      text += paragraphTextArray[i + 1];
+    }
     try {
-      line.textContent = await summarizer.summarize(paragraphTextArray[i]);
+      line.textContent = await summarizer.summarize(text);
       line.style.fontSize = "x-large";
       console.log(line.textContent);
       div.appendChild(line);
