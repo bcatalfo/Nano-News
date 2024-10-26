@@ -34,6 +34,10 @@ async function xergrush() {
     length: "short",
   });
 
+  // TODO: There is a bug where sometimes chunking 8 as a time is too much.
+  // For example in this article https://www.nytimes.com/2024/09/30/opinion/editorials/kamala-harris-2024.html
+  // So instead of a having a fixed amount of chunks, keep adding chunks while there character count is below
+  // A certain threshold.
   for (var i = 0; i < paragraphTextArray.length; i += 8) {
     // Let's do a loading animation
     const loadingBar = document.createElement("div");
