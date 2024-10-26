@@ -32,17 +32,13 @@ async function xergrush() {
     length: "short",
   });
 
-  for (var i = 0; i < paragraphTextArray.length; i += 4) {
+  for (var i = 0; i < paragraphTextArray.length; i += 8) {
     const line = document.createElement("p");
     var text = paragraphTextArray[i];
-    if (i + 1 < paragraphTextArray.length) {
-      text += paragraphTextArray[i + 1];
-    }
-    if (i + 2 < paragraphTextArray.length) {
-      text += paragraphTextArray[i + 2];
-    }
-    if (i + 3 < paragraphTextArray.length) {
-      text += paragraphTextArray[i + 3];
+    for (var j = 0; j < 8; j++) {
+      if (i + j < paragraphTextArray.length) {
+        text += paragraphTextArray[i + j];
+      }
     }
     console.log("Text being summarized: " + text);
     try {
