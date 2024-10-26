@@ -8,6 +8,7 @@ div.style.flexDirection = "column";
 div.style.width = "75%";
 div.style.marginLeft = "auto";
 div.style.marginRight = "auto";
+div.style.border = "solid 3px";
 const heading = document.createElement("h1");
 heading.textContent = "Generating summary...";
 heading.style.fontSize = "xx-large";
