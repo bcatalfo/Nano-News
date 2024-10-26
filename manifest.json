@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Nano News",
+    "description": "Summarize news articles with the Gemini Nano built-in AI.",
+    "version": "1.0",
+    "action": {
+      "default_popup": "bagool.html",
+      "default_icon": "nano-news.png"
+    }
+  }
